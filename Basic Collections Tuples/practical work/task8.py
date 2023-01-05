@@ -27,5 +27,3 @@ while True:
         looking()
     else:
         print('Вы ввели не правильно')
-
-
