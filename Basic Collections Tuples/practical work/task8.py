@@ -1,5 +1,6 @@
 contacts = {}
 
+
 def adding():
     name = input('Введите имя и фамилию нового контакта (через пробел): ').split()
     full_name = tuple(name)
@@ -8,6 +9,7 @@ def adding():
     else:
         print('Такой человек уже есть в контактах.')
     print('Текущий словарь контактов:', contacts)
+
 
 def looking():
     look_for = input('Введите фамилию для поиска: ')
@@ -18,6 +20,7 @@ def looking():
         else:
             print('Нету такого человка в контаках!')
             break
+
 
 while True:
     choose = int(input("Введите номер действия:\n1. Добавить контакт\n2. Найти человека\n"))
