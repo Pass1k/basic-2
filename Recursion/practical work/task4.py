@@ -12,11 +12,27 @@ site = {
 }
 
 
-def looking(name):
-    for i in site['html']:
-        for j in i:
-            print(j)
+def find_kay(struct, kay, depth):
+    if depth == 1:
+        if kay in struct:
+            return struct[kay]
+    if depth > 1:
+        for sub_struct in struct.values():
+            if isinstance(sub_struct, dict):
+                result = find_kay(sub_struct, kay, depth - 1)
+                if result:
+                    break
+        else:
+            result = None
+        return result
 
 
-print(looking(site['html']))
-#
+user_kay = input('Какой ключ ищем? ')
+search_depth = int(input('Введите глубину поиска: '))
+value = find_kay(site, user_kay, search_depth)
+
+
+if value:
+    print(value)
+else:
+    print('Такого ключа в струкутре сайта нет.')
