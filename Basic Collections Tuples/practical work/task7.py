@@ -7,7 +7,7 @@ def tpl_sort(string):
             status = False
             break
 
-    if status == True:
+    if status:
         sort = sorted(string)
         sort = tuple(sort)
         print(sort)

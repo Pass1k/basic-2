@@ -1,19 +1,14 @@
-def checking_array(checking_list):
-    return [i for i, v in enumerate(checking_list)if checking_num(i)]
+def crypto(checking_list):
+    return [v for i, v in enumerate(checking_list) if is_prime(i)]
 
 
-def checking_num(i_num):
+def is_prime(num):
     k = 0
-    for i in range(2, i_num // 2 + 1):
-        if i_num % i == 0:
-            k = k + 1
-    if k <= 0:
-        return True
-    else:
-        return False
+    for i in range(1, num + 1):
+        if num % i == 0:
+            k += 1
+    return k == 2
 
 
-s = input('Введите текст: ').split()
-
-i_list = checking_array(s)
-print(i_list)
+print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+print(crypto('О Дивный Новый мир!'))

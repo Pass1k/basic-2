@@ -19,31 +19,15 @@ students = {
     }
 }
 
-def function(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
 
-age1 = function(students)[1]
-my_lst1 = function(students)[0]
-
-id = []
-age = []
-for i in students:
-    id.append(i)
-    age.append(students[i]['age'])
+def foo(d: dict) -> tuple:
+    return set(sum([d[i]['interests'] for i in d], [])), sum(map(len, [d[i]['surname'] for i in d]))
 
 
-print('Список пар "ID студента — возраст":', list(zip(id, age)))
-print('Полный список интересов всех студентов:', set(my_lst1))
-print('Общая длина всех фамилий студентов:', age1)
+age = [i['age'] for i in students.values()]
+a = [i for i in enumerate(age, start=1)]
 
-
-
-
+print(a)
+interests, total_len = foo(students)
+print(', '.join(interests))
+print(total_len)

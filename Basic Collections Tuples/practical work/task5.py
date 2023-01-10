@@ -1,15 +1,14 @@
-familys = {
-    'Сидоров':{
-        'Сидоров Никита': 35,
-        'Сидорова Алина': 34,
-        'Сидоров Павел': 10
-    }
+families = {
+    'Сидоров Никита':35,
+    'Сидорова Алина':34,
+    'Сидоров Павел':10,
+    'Петров Виктор':15,
+    'Петрова Дарья':16
 }
 
-surname = input('Введите фамилию: ')
 
-if surname in familys:
-    for i in familys[surname]:
-        print(i)
-else:
-    print('Такой семьи нету')
+search = input('Кого ищем? ').lower()
+result = []
+for _ in families:
+    if search in _.split()[0].lower():
+        result.append(_+' '+str(families[_]))
