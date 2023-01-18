@@ -19,7 +19,9 @@ out_lst = []
 n = 1
 for i in new_list:
     name_sim = str(i[0][0]) + '.'
-    s_win = str(n) + ') ' + name_sim + ' ' + i[1] + ' ' + i[-1]
+    s_win = f'{str(n)}) {name_sim} {i[1]} {i[-1]}'
+    # TODO Вместо конкатенации строк, стоит освоить один из вариантов форматирования строк, например f-строки:
+    #  https://python-scripts.com/f-strings?ysclid=l8l6egu0y8596410876
     out_lst.append(s_win)
     n += 1
 
